@@ -1,3 +1,4 @@
+name: fixDemo
 on:
   workflow_dispatch:
   #schedule:
@@ -40,7 +41,7 @@ jobs:
         uses: veracode/Veracode-pipeline-scan-action@esd-true
         with:
           vid: ${{ secrets.VERACODE_API_ID }}
-          vkey: ${{ VERACODE_API_KEY }}
+          vkey: ${{ secrets.VERACODE_API_KEY }}
           file: "verademo.war"
           request_policy: "VeraDemo Policy"
           debug: 1
