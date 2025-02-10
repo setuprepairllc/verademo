@@ -1,4 +1,4 @@
-name: Veracode Static Analysis Demo
+name: Upload and Scan Demo
 on: workflow_dispatch
     
 jobs:
@@ -17,12 +17,12 @@ jobs:
         uses: veracode/veracode-uploadandscan-action@0.2.6
         with:
           appname: 'VeraDemo'
-          createprofile: true
+          createprofile: false
           filepath: 'app/target/verademo.war'
           vid: '${{ secrets.API_ID }}'
           vkey: '${{ secrets.API_KEY }}'
-          createsandbox: 'true'
-          sandboxname: 'SANDBOXNAME'
+#          createsandbox: 'true'
+#          sandboxname: 'SANDBOXNAME'
 #          scantimeout: 0
 #          exclude: '*.js'
 #          include: '*.war'
