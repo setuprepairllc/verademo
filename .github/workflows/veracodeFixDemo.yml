@@ -1,4 +1,4 @@
-name: fixDemo
+name: Veracode Fix Demo
 on:
   workflow_dispatch:
   #schedule:
