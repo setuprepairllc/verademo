@@ -24,7 +24,7 @@ jobs:
       - uses: actions/upload-artifact@v4
         with:
           name: verademo.war
-          path: target/verademo.war
+          path: /app/target/verademo.war
         
   pipeline_scan:
     needs: build
@@ -35,8 +35,9 @@ jobs:
         uses: actions/checkout@v3
       - name: get archive
         uses: actions/download-artifact@v4
-        with:
+        with: 
           name: verademo.war
+          working-directory: /app/target/
       - name: pipeline-scan action step
         id: pipeline-scan
         uses: veracode/Veracode-pipeline-scan-action@esd-true
